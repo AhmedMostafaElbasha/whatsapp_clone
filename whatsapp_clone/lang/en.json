@@ -1,1 +1,5 @@
-[]
+{
+    "chats_tab": "CHATS",
+    "status_tab": "STATUS",
+    "calls_tab": "CALLS"
+}

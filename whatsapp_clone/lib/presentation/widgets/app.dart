@@ -18,6 +18,10 @@ class App extends StatelessWidget {
         return MaterialApp(
           initialRoute: AppRoutes.home,
           routes: AppRoutes.routes,
+          theme: ThemeData(
+            primaryColor: AppColors.darkShadeCyan,
+            accentColor: AppColors.greenCyanShade,
+          ),
           debugShowCheckedModeBanner: false,
           title: 'WhatsApp Clone App',
           supportedLocales: [
