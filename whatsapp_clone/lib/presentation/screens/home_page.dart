@@ -55,16 +55,37 @@ class _HomePageState extends State<HomePage>
           ],
         ),
         actions: [
-          IconButton(
-            icon: Icon(AppIcons.search),
-            onPressed: () {},
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(5)),
+            child: GestureDetector(
+              child: Icon(AppIcons.search),
+              onTap: () {},
+            ),
           ),
-          IconButton(
-            icon: Icon(AppIcons.moreVertical),
-            onPressed: () {},
+          GestureDetector(
+            child: Icon(AppIcons.moreVertical),
+            onTap: () {},
           ),
         ],
       ),
+      body: TabBarView(
+        controller: _tabController,
+        children: [
+          CameraPage(),
+          ChatsPage(),
+          StatusPage(),
+          CallsPage(),
+        ],
+      ),
+      floatingActionButton: showFab
+          ? FloatingActionButton(
+              onPressed: () {},
+              child: Icon(
+                AppIcons.message,
+                color: AppColors.white,
+              ),
+            )
+          : null,
     );
   }
 }
