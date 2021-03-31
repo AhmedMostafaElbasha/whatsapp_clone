@@ -1,5 +1,6 @@
 {
     "chats_tab": "CHATS",
     "status_tab": "STATUS",
-    "calls_tab": "CALLS"
+    "calls_tab": "CALLS",
+    "calls_page_placeholder": "Calls"
 }
