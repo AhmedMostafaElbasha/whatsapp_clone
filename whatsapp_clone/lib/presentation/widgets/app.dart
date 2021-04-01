@@ -4,8 +4,14 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:whatsapp_clone/constants/constants.dart';
 import 'package:whatsapp_clone/utilities/utilities.dart';
+import 'package:camera/camera.dart';
+import 'package:whatsapp_clone/presentation/presentation.dart';
 
 class App extends StatelessWidget {
+  final List<CameraDescription> cameras;
+
+  App({this.cameras});
+
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -17,6 +23,7 @@ class App extends StatelessWidget {
       builder: () {
         return MaterialApp(
           initialRoute: AppRoutes.home,
+          home: HomePage(cameras: cameras),
           routes: AppRoutes.routes,
           theme: ThemeData(
             primaryColor: AppColors.darkShadeCyan,

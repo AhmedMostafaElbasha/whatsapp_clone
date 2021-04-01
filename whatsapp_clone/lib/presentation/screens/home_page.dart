@@ -3,8 +3,12 @@ import 'package:flutter_screenutil/screen_util.dart';
 import 'package:whatsapp_clone/constants/constants.dart';
 import 'package:whatsapp_clone/presentation/presentation.dart';
 import 'package:whatsapp_clone/utilities/utilities.dart';
+import 'package:camera/camera.dart';
 
 class HomePage extends StatefulWidget {
+   final List<CameraDescription> cameras;
+
+   HomePage({this.cameras});
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -16,7 +20,6 @@ class _HomePageState extends State<HomePage>
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _tabController = TabController(length: 4, vsync: this, initialIndex: 1);
     _tabController.addListener(() {
@@ -71,7 +74,7 @@ class _HomePageState extends State<HomePage>
       body: TabBarView(
         controller: _tabController,
         children: [
-          CameraPage(),
+          CameraPage(cameras: widget.cameras),
           ChatsPage(),
           StatusPage(),
           CallsPage(),
